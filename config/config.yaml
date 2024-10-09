@@ -1,0 +1,35 @@
+robot_size: 1.0 # [m] robot radius
+view_range: 10.0 # [m] maximum observation range
+N_SAMPLE: 10000  # number of sample_points
+# N_KNN: 15  # number of edge from one sampled point
+# MIN_EDGE_LEN: 0.5 #0.5 * robot_size # [m] Minimum edge length
+# MAX_EDGE_LEN: 10.0 #5 * robot_size  # [m] Maximum edge length
+
+semantic_untraversable_class_list: [0, 2, 3, 5, 6, 7, 8]
+final_untraversable_class_list: [0]
+# gdls_classes_cost: [99999, 0.8, 0.5, 0.1]
+gdls_classes_cost: [99999, 0.6, 0.3, 0.1]
+
+show_animation: True
+
+# 100, 200,200, 500,500,500, 1000,1000,1000, ,2000,2000,2000
+# 8,   8,16,    8,16,32,     8,32,64         ,16,32,128
+WIDTH: 200    # [m]  map width
+HEIGHT: 200    # [m]  map height
+FEATURE_SIZE: 10.0 # [m] size of feature
+
+n_bins: 5 # number of bins for the costmap
+numOfClasses: 4 #n_bins - 1 # number of classes for the costmap
+
+
+# numOfRegions: 40 # number of regions for the costmap
+#numOfRegions = ceil(ceil(Width/FeatureSize)* 1.5))
+
+p_certain: 0.95 # probability of the costmap being certain
+classes_cost: [99999, 0.75, 0.5, 0.25]  # cost of each class
+
+
+traversability_objective: False
+
+trials: 1
+max_time: 5
