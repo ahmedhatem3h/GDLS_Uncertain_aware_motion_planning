@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: sknw
+Version: 0.15
+Summary: Analysis of object skeletons
+Home-page: https://github.com/yxdragon/sknw
+Author: YXDragon
+Author-email: yxdragon@imagepy.org
+License: BSD 3-clause
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: networkx
+Requires-Dist: numba
+
+sknw: skeleton analysis in Python.
+Inspired by Juan Nunez-Iglesias's skan.

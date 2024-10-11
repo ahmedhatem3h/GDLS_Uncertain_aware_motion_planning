@@ -1,0 +1,11 @@
+sknw-0.15.dist-info/INSTALLER,sha256=zuuue4knoyJ-UwPPXg8fezS7VCrXJQrAP7zeNuwvFQg,4
+sknw-0.15.dist-info/LICENSE,sha256=30n1tvkDU-ee1tFgLQC4xL1Z7Q3NDWpycRiwm-AVOMs,1541
+sknw-0.15.dist-info/METADATA,sha256=mB83Q-x2GGkS2WiQLomXPNd1lopyEzbXI2hH5yPqmpA,367
+sknw-0.15.dist-info/RECORD,,
+sknw-0.15.dist-info/REQUESTED,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sknw-0.15.dist-info/WHEEL,sha256=OqRkF0eY5GHssMorFjlbTIq072vpHpF60fIQA6lS9xA,92
+sknw-0.15.dist-info/top_level.txt,sha256=r3aBA5uaDA_9c0KSYYlzsB4f41QivYQpfUMF953RTlo,5
+sknw/__init__.py,sha256=hgTKzPWBmHNAxeO9mX6HLCCVMoaMnpR0U8VwY4wSPYU,744
+sknw/__pycache__/__init__.cpython-312.pyc,,
+sknw/__pycache__/sknw.cpython-312.pyc,,
+sknw/sknw.py,sha256=ZNMc9DdxvGmIw1WRhFmoZQLcPhhCxTXQPsqLFcae4fA,5849

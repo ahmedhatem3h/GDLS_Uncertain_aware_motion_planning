@@ -28,27 +28,18 @@ from priority_queue import PriorityQueue, Priority
 sys.setrecursionlimit(1000000000)
 
 
-# pickle.dump(mask_final, open(r'results/mask_final.pickle', 'wb'))
-
 params = param_loader()
-# MIN_EDGE_LEN = params["MIN_EDGE_LEN"]  # [m] Minimum edge length
-# MAX_EDGE_LEN = params["MAX_EDGE_LEN"]  # [m] Maximum edge length
-# N_SAMPLE_base = params["N_SAMPLE"]  # number of sample_points
-# N_KNN = params["N_KNN"]  # number of edge from one sampled point
 
 p_certain = params["p_certain"]
 robot_size = params["robot_size"]
 semantic_untraversable_class_list = params["semantic_untraversable_class_list"]
 final_untraversable_class_list = params["final_untraversable_class_list"]
-gdls_classes_cost = params["gdls_classes_cost"]
+traversability_classes_cost = params["traversability_classes_cost"]
+sensor_range = params["sensor_range"]
+N = params["N"]
+N2 = params["N2"]
 
 
-N = 2000 # 750
-N2 = 1000
-
-# N = 4000
-# N2 = 2000
-map = None
 r = robot_size
 
 @njit
@@ -632,9 +623,7 @@ class LazyPRMStar:
 
         #  Get the seed used by the random number generator
         self.seed = self.rng.bit_generator._seed_seq.entropy
-        # # save the seed to a file
-        with open('seed.pickle', 'wb') as f:
-            pickle.dump(self.seed, f)
+
 
 
         # # load the seed from the file using pickle
@@ -666,7 +655,7 @@ class LazyPRMStar:
         self.temp_line_list = []
         self.temp_point_list = []
         # self.wd = 0.75
-        self.sensor_range = 10.0
+        self.sensor_range = sensor_range
         if sx == None and sy == None and gx == None and gy == None:
             self.sx, self.sy, self.gx, self.gy = get_start_goal_points(self.img, self.contours_objects)
         else:
@@ -852,7 +841,7 @@ class LazyPRMStar:
             print(q.x, q.y, neighbor.x, neighbor.y)
             for index in indices:
                 x, y = index
-                if self.cost_map[x, y] == self.gdls_classes_cost[0]:
+                if self.cost_map[x, y] == self.traversability_classes_cost[0]:
                     print(x,y,"untraversable")
             raise ValueError("Total cost is too high")
         

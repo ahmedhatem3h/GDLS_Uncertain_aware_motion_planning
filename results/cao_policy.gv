@@ -1,0 +1,6 @@
+graph {
+	0 [label="(766, 79), AAAAAAAAAAAAAAAAAAA" shape=box xlabel=174.622 xlp="0,0"]
+	0 -- 1 [label=174.62]
+	1 [label="(694, 238), AAAAAAAAAAAAAAAAAAA" shape=ellipse xlabel=0 xlp="-100 ,-100"]
+	overlap=false
+}

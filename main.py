@@ -23,11 +23,15 @@ sys.setrecursionlimit(10000000)
 
 params = param_loader()
 robot_size = params["robot_size"]
-classes_cost = params["classes_cost"]
 traversability_objective = params["traversability_objective"]
 semantic_untraversable_class_list = params["semantic_untraversable_class_list"]
 final_untraversable_class_list = params["final_untraversable_class_list"]
-gdls_classes_cost = params["gdls_classes_cost"]
+traversability_classes_cost = params["traversability_classes_cost"]
+demo = params["demo"]
+generate_graph = params["generate_graph"]
+top_view_image_path = params["top_view_image_path"]
+
+
 
 G = nx.Graph()
 sG = nx.Graph()
@@ -888,9 +892,7 @@ def main():
     # start = (0, 0)
     # goal = (WIDTH-1, HEIGHT-1)
 
-    generate_graph = True
 
-    demo = True
 
     if demo:
         # scale = 8.152
@@ -903,14 +905,14 @@ def main():
         current_directory = os.getcwd()
         if demo:
             final_traversability_classes, cost_map, contours_objects, obstacle_list = get_demo_map(scale = scale)
-            # image_path = os.path.join(current_directory, "..", 'maps', 'small_colored_HO_P1.png')
-            image_path = os.path.join(current_directory, "..", 'maps', 'small_colored_HO_P1_maks_correct_scale.jpg')
+            # image_path = os.path.join(current_directory, 'data', 'small_colored_HO_P1.png')
+            image_path = os.path.join(current_directory, 'data', 'small_colored_HO_P1_correct_scale.jpg')
 
             colored_img = cv2.imread(image_path)
             colored_img = cv2.cvtColor(colored_img, cv2.COLOR_BGR2RGB)
         else:
             final_traversability_classes, cost_map, contours_objects, obstacle_list = get_map(scale = scale)
-            image_path = os.path.join(current_directory, "..", 'maps', 'HO_P1_DEM.png')
+            image_path = os.path.join(current_directory, top_view_image_path)
             colored_img = cv2.imread(image_path)
             colored_img = cv2.cvtColor(colored_img, cv2.COLOR_BGR2RGB)
 
@@ -927,7 +929,6 @@ def main():
 
         print(__file__ + " start!!")
 
-        traversability_objective = False
 
         start_time = time.time()
         lazyPRM_Planner = LazyPRMStar(final_traversability_classes, cost_map, contours_objects, traversability_objective, obstacle_list, debug=True,

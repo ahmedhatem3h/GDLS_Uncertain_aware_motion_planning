@@ -28,7 +28,7 @@ numba==0.60.0
 numpy==1.26.4
 opencv-python==4.10.0.84
 opensimplex==0.4.5.1
-osqp==0.6.7.post0
+osqp==0.6.7.post3
 packaging==24.1
 pandas==2.2.2
 pillow==10.4.0
@@ -36,6 +36,9 @@ pygame==2.6.0
 pyogrio==0.9.0
 pyparsing==3.1.2
 pyproj==3.6.1
+PyQt5==5.15.11
+PyQt5-Qt5==5.15.15
+PyQt5_sip==12.15.0
 python-dateutil==2.9.0.post0
 pytz==2024.1
 PyYAML==6.0.1
